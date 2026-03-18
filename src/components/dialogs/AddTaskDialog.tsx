@@ -68,7 +68,7 @@ export function AddTaskDialog({
               placeholder="Title of the task..."
               value={title}
               onChange={(e) => onTitleChange(e.target.value)}
-              onKeyPress={handleKeyPress}
+              onKeyUp={handleKeyPress}
             />
           </div>
           <div>
