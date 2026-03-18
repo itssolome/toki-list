@@ -1,4 +1,4 @@
-export { useState } from "react"
+import { useState } from "react"
 import type { Task } from "@/types.ts"
 
 export function useTasks() {
@@ -42,7 +42,7 @@ export function useTasks() {
 
   const confirmDelete = () => {
     if (taskToDelete) {
-      setTasks(tasks.filter((task) => task.id !== taskToDelete))
+      setTasks(tasks.filter((task: Task) => task.id !== taskToDelete))
       setIsDeleteDialogOpen(false)
       setTaskToDelete(null)
     }
@@ -56,7 +56,7 @@ export function useTasks() {
   const saveEditedTask = () => {
     if (editingTask) {
       setTasks(
-        tasks.map((task) => (task.id === editingTask.id ? editingTask : task))
+        tasks.map((task: Task) => (task.id === editingTask.id ? editingTask : task))
       )
       setIsDialogOpen(false)
       setEditingTask(null)
