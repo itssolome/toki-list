@@ -34,42 +34,44 @@ function AppContent() {
   } = useTasksContext()
 
   return (
-    <div className="m-auto flex min-h-svh w-[50%] flex-col items-center justify-center p-6">
-      <Navbar />
-      <TaskList
-        tasks={tasks}
-        onEdit={openEditDialog}
-        onDelete={openDeleteConfirmation}
-      />
+    <div className="flex min-h-svh justify-center">
+      <div className="flex w-[30%] flex-col text-sm leading-loose items-center content-center">
+        <Navbar />
+        <TaskList
+          tasks={tasks}
+          onEdit={openEditDialog}
+          onDelete={openDeleteConfirmation}
+        />
 
-      <AddTaskDialog
-        open={isAddDialogOpen}
-        onOpenChange={setIsAddDialogOpen}
-        title={title}
-        onTitleChange={setTitle}
-        description={description}
-        onDescriptionChange={setDescription}
-        date={date}
-        onDateChange={setDate}
-        importance={importance}
-        onImportanceChange={setImportance}
-        onAdd={addTask}
-        onCancel={closeAddDialog}
-      />
+        <AddTaskDialog
+          open={isAddDialogOpen}
+          onOpenChange={setIsAddDialogOpen}
+          title={title}
+          onTitleChange={setTitle}
+          description={description}
+          onDescriptionChange={setDescription}
+          date={date}
+          onDateChange={setDate}
+          importance={importance}
+          onImportanceChange={setImportance}
+          onAdd={addTask}
+          onCancel={closeAddDialog}
+        />
 
-      <EditTaskDialog
-        open={isDialogOpen}
-        onOpenChange={setIsDialogOpen}
-        task={editingTask}
-        onTaskChange={setEditingTask}
-        onSave={saveEditedTask}
-      />
+        <EditTaskDialog
+          open={isDialogOpen}
+          onOpenChange={setIsDialogOpen}
+          task={editingTask}
+          onTaskChange={setEditingTask}
+          onSave={saveEditedTask}
+        />
 
-      <DeleteConfirmDialog
-        open={isDeleteDialogOpen}
-        onOpenChange={setIsDeleteDialogOpen}
-        onConfirm={confirmDelete}
-      />
+        <DeleteConfirmDialog
+          open={isDeleteDialogOpen}
+          onOpenChange={setIsDeleteDialogOpen}
+          onConfirm={confirmDelete}
+        />
+      </div>
     </div>
   )
 }
